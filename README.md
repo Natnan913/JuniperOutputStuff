@@ -1,0 +1,1 @@
+A little script I wrote in my own time to speed up the process of some hardware testing I needed to get done. We don't really have existing tools like this here for it at work and I wanted to share my progress in learning a bit of programming/scripting.
