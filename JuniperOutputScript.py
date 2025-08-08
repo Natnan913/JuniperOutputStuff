@@ -11,11 +11,10 @@ def outputOfCommand(command):
     time.sleep(3)
 
     output = intendedSerialPort.read(4096)   
-    time.sleep(2)  
 
-    time.sleep(2)
-    return output.decode(errors='ignore')
-
+    time.sleep(3)
+    return output.decode(errors='ignore') # I'm not particularly worried about unicode errors - I've just asked decode() to not doing anything about them.
+    
 
 intendedSerialPort.write(cliScreenLengthen.encode() + b'\r\n')
 
@@ -23,7 +22,7 @@ intendedSerialPort.write(cliScreenLengthen.encode() + b'\r\n')
 
 interfaceInfo = outputOfCommand("show interfaces terse")
 print("Output of show interfaces terse:\n", interfaceInfo)
-
+ 
 versionInfo = outputOfCommand('show version')
 print("Output of show version:\n", versionInfo)
 
@@ -47,6 +46,7 @@ print("Output for chassis hardware:\n", chassisHardwareInfo)
 
 ###-------------------End of Output stuff----------------------------------###
 
-intendedSerialPort.write(cliScreenRevert.encode() + b'\r\n') # I'm not really sure why, but I need to extend the max lines for the juniper CLI, unlike the Cisco script.
+intendedSerialPort.write(cliScreenRevert.encode() + b'\r\n') # I'm not really sure why, but I need to explicitly extend the max lines for the juniper CLI, unlike the Cisco script.
+
 
 intendedSerialPort.close()
