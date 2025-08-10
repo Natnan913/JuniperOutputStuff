@@ -32,10 +32,10 @@ print("output of show chassis environment:\n", chassisEnvInfo)
 chassisFirmwareInfo = outputOfCommand('show chassis firmware')
 print("Output of show chassis firmware:\n", chassisFirmwareInfo)
 
-chassisPicInfo = outputOfCommand('#show chassis pic fpc-slot 0 pic-slot 0')
+chassisPicInfo = outputOfCommand('show chassis pic fpc-slot 0 pic-slot 0')
 print("Output for pic info:\n", chassisFirmwareInfo)
 
-chassisPicInfoSlot1 = outputOfCommand('#show chassis pic fpc-slot 0 pic-slot 1')
+chassisPicInfoSlot1 = outputOfCommand('show chassis pic fpc-slot 0 pic-slot 1')
 print("Output for pic info:\n", chassisPicInfoSlot1)
 
 VirtualChassisInfo = outputOfCommand('show virtual-chassis status detail')
@@ -50,3 +50,4 @@ intendedSerialPort.write(cliScreenRevert.encode() + b'\r\n') # I'm not really su
 
 
 intendedSerialPort.close()
+
