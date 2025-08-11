@@ -8,7 +8,6 @@ cliScreenRevert = "set cli screen-length 24"
 def outputOfCommand(command):
     
     intendedSerialPort.write(command.encode() + b'\r\n') 
-    time.sleep(2)
     output = intendedSerialPort.read(4096)   
     time.sleep(2)
     return output.decode(errors='ignore') # I'm not particularly worried about unicode errors - I've just asked decode() to not doing anything about them.
@@ -48,6 +47,7 @@ intendedSerialPort.write(cliScreenRevert.encode() + b'\r\n') # I'm not really su
 
 
 intendedSerialPort.close()
+
 
 
 
