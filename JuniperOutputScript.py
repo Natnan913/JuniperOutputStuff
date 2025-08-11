@@ -33,7 +33,7 @@ chassisFirmwareInfo = outputOfCommand('show chassis firmware')
 print("Output of show chassis firmware:\n", chassisFirmwareInfo)
 
 chassisPicInfo = outputOfCommand('show chassis pic fpc-slot 0 pic-slot 0')
-print("Output for pic info:\n", chassisFirmwareInfo)
+print("Output for pic info:\n", chassisPicInfo)
 
 chassisPicInfoSlot1 = outputOfCommand('show chassis pic fpc-slot 0 pic-slot 1')
 print("Output for pic info:\n", chassisPicInfoSlot1)
@@ -50,4 +50,5 @@ intendedSerialPort.write(cliScreenRevert.encode() + b'\r\n') # I'm not really su
 
 
 intendedSerialPort.close()
+
 
